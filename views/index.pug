@@ -1,0 +1,18 @@
+html
+  head
+    meta(charset='UTF-8')
+    title OCR
+    link(rel="stylesheet", href="style.css")
+    link(rel="stylesheet", href="bootstrap.min.css")
+    script(src="https://unpkg.com/tesseract.js@v2.0.0-beta.1/dist/tesseract.min.js")
+  body
+    h1.title Image to text
+    .container
+      form(action="/", method="POST", enctype="multipart/form-data")
+        .form-group
+          label.font-weight-bolder File:
+          input(type="file", name="avatar", required).form-control
+          button(type="submit" class="ripple").mt-2 Bấm em đi 
+      if rs
+        .border.border-secondary.rounded
+          p.mt-2.ml-2=rs
