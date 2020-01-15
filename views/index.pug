@@ -6,13 +6,19 @@ html
     link(rel="stylesheet", href="bootstrap.min.css")
     script(src="https://unpkg.com/tesseract.js@v2.0.0-beta.1/dist/tesseract.min.js")
   body
-    h1.title Image to text
     .container
-      form(action="/", method="POST", enctype="multipart/form-data")
-        .form-group
-          label.font-weight-bolder File:
-          input(type="file", name="avatar", required).form-control
-          button(type="submit" class="ripple").mt-2 Bấm em đi 
-      if rs
-        .border.border-secondary.rounded
-          p.mt-2.ml-2=rs
+      h1.title Image to text
+      form(action="/", method="POST", enctype="multipart/form-data").form-group
+        label.font-weight-bolder File:
+        input(type="file", name="avatar", required, style="width: 30rem;").form-control
+        button(type="submit" class="ripple").mt-2 Chuyển đổi           
+        if rs
+          .border.border-secondary.rounded.mt-2.ml-2
+            p.mt-2.ml-2.result=rs
+      .justify-content-end.row.footer
+        .card(style="width: 20rem;").bg-dark
+          .card-header.text-white.result Thành viên:
+          ul.list-group.list-group-flush
+            li.list-group-item  Nguyễn Thị Thùy Dương: 110117046
+            li.list-group-item  Phạm Huỳnh Việt Tú: 110117064
+            li.list-group-item  Bùi Chính Nhân: 110117021

@@ -30,11 +30,12 @@ app.get('/', (req, res) => {
 app.post('/', upload.single('avatar'), (req, res) => {
   worker.recognize(req.file.path, "eng")
   .progress(progress =>{
-    console.log(process);
+    
   })
   .then(result => {
     res.render( 'index.pug', {
-      rs : result.text
+      rs : result.text,
+      file: req.file.path
     });
   })
   // .finally(() => worker.terminate());
